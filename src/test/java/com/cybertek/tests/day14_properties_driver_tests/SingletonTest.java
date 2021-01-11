@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class SingletonTest {
 
     @Test
-    public void test(){
+    public void test() {
         String s1 = Singleton.getInstance();
         //100 lines of code
         String s2 = Singleton.getInstance();

@@ -37,7 +37,7 @@ public class FileUploadTest {
         //locating choosefile button
         WebElement chooseFile = driver.findElement(By.name("file"));
         //sending file
-        chooseFile.sendKeys("/Users/jamaldemir/Desktop/file.txt");
+        chooseFile.sendKeys("/Users/elzatazat/Downloads/CI CD + jenkins.pdf");
         //clicking upload button
         driver.findElement(By.id("file-submit")).click();
 

@@ -3,11 +3,12 @@ package com.cybertek.tests.day15_staletest;
 import com.cybertek.tests.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class StaleTest extends TestBase {
+public class StaleTest  extends TestBase{
 
 
     @Test

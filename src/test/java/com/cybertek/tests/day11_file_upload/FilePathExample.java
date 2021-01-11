@@ -12,8 +12,8 @@ public class FilePathExample {
         String projectPath = System.getProperty("user.dir");
         String relativePath = "src/test/resources/testfile.txt";
         System.out.println(projectPath);
-      //  String filePath = projectPath+"/"+relativePath;
-       // System.out.println("filePath = " + filePath);
+        String filePath = projectPath+"/"+relativePath;
+        System.out.println("filePath = " + filePath);
 
 
     }
