@@ -14,13 +14,13 @@ public class NoSelectDropdown {
     @Test
     public void test1(){
         WebDriver driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://practice.cybertekschool.com/dropdown");
+        driver.get("https://practice.expandtesting.com/dropdown");
 
-        WebElement dropdownElement = driver.findElement(By.id("dropdownMenuLink"));
+        WebElement dropdownElement = driver.findElement(By.id("dropdown"));
 
         dropdownElement.click();
 
-        List<WebElement> dropdownOptions = driver.findElements(By.className("dropdown-item"));
+        List<WebElement> dropdownOptions = driver.findElements(By.xpath("//option[contains(text(), 'Option')]"));
 
         //print each option
         for (WebElement option : dropdownOptions) {
@@ -28,7 +28,7 @@ public class NoSelectDropdown {
         }
 
         //click yahoo
-        dropdownOptions.get(2).click();
+        dropdownOptions.get(1).click();
 
 
 

@@ -26,20 +26,21 @@ public class JavaScriptExecutorDemo {
     }
 
     @Test
-    public void clickWithJS(){
-        driver.get("http://practice.cybertekschool.com/");
+    public void clickWithJS() throws InterruptedException {
+        driver.get("https://practice.cydeo.com/dropdown");
 
-        WebElement dropdownLink = driver.findElement(By.linkText("Dropdown"));
+        WebElement dropdown = driver.findElement(By.id("dropdown"));
         //clicking with JavascriptExecutor
         //create js executor object
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         //use executeScript
-        jse.executeScript("arguments[0].click();",dropdownLink);
+        jse.executeScript("arguments[0].click();",dropdown);
+
     }
 
     @Test
     public void type(){
-        driver.get("http://practice.cybertekschool.com/dynamic_controls");
+        driver.get("https://practice.cydeo.com/dynamic_controls");
 
         WebElement inputbox = driver.findElement(By.cssSelector("#input-example>input"));
 
@@ -51,7 +52,7 @@ public class JavaScriptExecutorDemo {
 
     @Test
     public void scrollDownandUp() throws InterruptedException {
-        driver.get("http://practice.cybertekschool.com/infinite_scroll");
+        driver.get("https://practice.cydeo.com/infinite_scroll");
         driver.manage().window().maximize();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 

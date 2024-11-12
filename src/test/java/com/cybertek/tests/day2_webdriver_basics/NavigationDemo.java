@@ -20,9 +20,9 @@ public class NavigationDemo {
         //navigate to another website with different selenium method
         driver.navigate().to("https://www.facebook.com");
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
-        //wait 3 second here then go back
+        //wait 2 second here then go back
         //how to go back to google after we navigate to facebook
         //goes back to previous page
         driver.navigate().back();

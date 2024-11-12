@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class MultipleWindows {
@@ -27,7 +29,7 @@ public class MultipleWindows {
     @Test
     public void switchWindowsTest() throws InterruptedException {
 
-        driver.get("http://practice.cybertekschool.com/windows");
+        driver.get("https://practice.expandtesting.com/windows");
 
         //get title
         System.out.println("Title before new window: "+driver.getTitle());
@@ -41,9 +43,6 @@ public class MultipleWindows {
 
         String currentWindowHandle = driver.getWindowHandle();
         System.out.println(currentWindowHandle);
-
-        //clic click here
-        driver.findElement(By.linkText("Click Here")).click();
 
         //we will switch to new window
         Set<String> windowHandles = driver.getWindowHandles();
@@ -62,7 +61,7 @@ public class MultipleWindows {
 
     @Test
     public void moreThan2Window(){
-        driver.get("http://practice.cybertekschool.com/windows");
+        driver.get("https://practice.cydeo.com//windows");
 
         driver.findElement(By.linkText("Click Here")).click();
 
@@ -86,6 +85,22 @@ public class MultipleWindows {
         System.out.println("After switch: "+driver.getTitle());
 
         System.out.println(driver.findElement(By.tagName("h3")).getText());
+
+
+    }
+
+    @Test
+    public void moreThan2Window_way2(){
+        driver.get("https://practice.cydeo.com//windows");
+
+        driver.findElement(By.linkText("Click Here")).click();
+
+     List<String> tabs =  new ArrayList(driver.getWindowHandles());
+
+        System.out.println("Before switch: "+driver.getTitle());
+
+       driver.switchTo().window(tabs.get(1));
+        System.out.println("After switch: "+driver.getTitle());
 
 
     }

@@ -10,15 +10,15 @@ public class classNameTest {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("http://practice.cybertekschool.com/sign_up");
+        driver.get("https://practice.expandtesting.com/xpath-css-tester");
 
-        WebElement homeLink = driver.findElement(By.className("nav-link"));
-        homeLink.click();
+        WebElement homeLink = driver.findElement(By.className("form-control"));
+        homeLink.sendKeys("asdas@gmail.com");
 
-        driver.get("http://practice.cybertekschool.com/multiple_buttons");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
         //print multipe buttons title
-        System.out.println(driver.findElement(By.className("h3")).getText());
+        System.out.println(driver.findElement(By.xpath("//div[@class='col-md-3 mb-2'][1]/div/div/div")).getText());
 
     }
 }

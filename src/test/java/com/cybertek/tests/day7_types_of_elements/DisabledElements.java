@@ -14,15 +14,15 @@ public class DisabledElements {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
-        driver.get("http://practice.cybertekschool.com/radio_buttons");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
-        WebElement greenRadioButton = driver.findElement(By.id("green"));
+        WebElement greenRadioButton = driver.findElement(By.xpath("//input[@id='green' and @class ='form-check-input']"));
 
         //how to check webelement is enabled or not ?
         System.out.println("Is element enabled: "+greenRadioButton.isEnabled());
-        Assert.assertFalse(greenRadioButton.isEnabled(),"Verify Green is NOT enabled");
+        Assert.assertFalse(greenRadioButton.isEnabled(),"Verify Black is NOT enabled");
 
-        greenRadioButton.click();
+       // greenRadioButton.click();
     }
 
     @Test

@@ -2,6 +2,7 @@ package com.cybertek.tests.day12_actions_jsexecutor;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,9 +29,9 @@ public class ActionsTest {
 
     @Test
     public void hoverTest() throws InterruptedException {
-        driver.get("http://practice.cybertekschool.com/hovers");
+        driver.get("https://practice.expandtesting.com/hovers");
 
-        WebElement img1 = driver.findElement(By.tagName("img"));
+        WebElement img1 = driver.findElement(By.xpath("//img[@alt='User Avatar']"));
         //Actions --> class that contains all the user interactions
         //how to create actions object / pasing driver as a constructor
         Actions actions = new Actions(driver);
@@ -47,15 +48,15 @@ public class ActionsTest {
 
     @Test
     public void DragAndDrop() throws InterruptedException {
-        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        driver.get("https://practice.expandtesting.com/drag-and-drop");
         driver.manage().window().maximize();
 
         Actions actions = new Actions(driver);
-        WebElement source = driver.findElement(By.id("draggable"));
-        WebElement target = driver.findElement(By.id("droptarget"));
+        WebElement source = driver.findElement(By.id("column-a"));
+        WebElement target = driver.findElement(By.id("column-b"));
         Thread.sleep(2000);
         //Clicking accept cookies
-        driver.findElement(By.xpath("//*[.='Accept Cookies']")).click();
+       // driver.findElement(By.xpath("//*[.='Accept Cookies']")).click();
         Thread.sleep(2000);
         actions.dragAndDrop(source,target).perform();
 
@@ -78,8 +79,9 @@ public class ActionsTest {
         //if you are chaining actions we add build() method before perform()
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(2000).release().build().perform();
 
-    }
 
+
+    }
 
 
 }

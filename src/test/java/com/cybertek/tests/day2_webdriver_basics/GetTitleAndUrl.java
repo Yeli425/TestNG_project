@@ -11,7 +11,7 @@ public class GetTitleAndUrl{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://practice.cybertekschool.com");
+        driver.get("https://the-internet.herokuapp.com/");
 
         //getting title with selenium
        //first short cut to introduce local variable
@@ -28,6 +28,8 @@ public class GetTitleAndUrl{
         //getPageSource--> gets the source code of the page.
         String pageSource = driver.getPageSource();
         System.out.println("pageSource = " + pageSource);
+
+
 
 
     }

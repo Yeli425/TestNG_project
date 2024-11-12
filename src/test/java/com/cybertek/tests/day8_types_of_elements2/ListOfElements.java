@@ -17,15 +17,15 @@ public class ListOfElements {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("http://practice.cybertekschool.com/multiple_buttons");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
         //save our webelements inside the list
-        List<WebElement> buttons = driver.findElements(By.tagName("button"));
+        List<WebElement> buttons = driver.findElements(By.xpath("//input[@ type ='radio' and  contains(@name, 'color')]"));
 
         System.out.println("buttons.size() = " + buttons.size());
 
         //verify we have 6 button
-        Assert.assertEquals(buttons.size(),6);
+        Assert.assertEquals(buttons.size(),5);
 
         //loop for each button, we can implement selenium methods
         for (WebElement button : buttons) {

@@ -8,8 +8,8 @@ public class callWebDriverFactory {
     public static void main(String[] args) {
 
 
-        WebDriver driver = WebDriverFactory.getDriver("FireFOX");
+        WebDriver driver = WebDriverFactory.getDriver("chRome");
 
-        driver.get("http://practice.cybertekschool.com");
+        driver.get("https://the-internet.herokuapp.com/");
     }
 }

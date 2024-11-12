@@ -10,15 +10,18 @@ public class linkTextAndPartialLinkText {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver("Chrome");
 
-        driver.get("http://practice.cybertekschool.com/dynamic_loading");
+        driver.get("https://demo.guru99.com/test/link.html");
 
-        WebElement link1 = driver.findElement(By.linkText("Example 1: Element on page that is hidden and become visible after trigger"));
+        WebElement link1 = driver.findElement(By.linkText("click here"));
 
-//        link1.click();
+        link1.click();
+        driver.navigate().back();
 
-        WebElement link4 = driver.findElement(By.partialLinkText("Example 4"));
-        link4.click();
+        WebElement link2 = driver.findElement(By.xpath("//a[@href=\"http://www.fb.com\"]"));
+        link2.click();
 
+
+        driver.close();
 
 
     }

@@ -35,6 +35,9 @@ public class LoginPage {
         passwordInput.sendKeys(passwordStr);
         loginBtn.click();
 
+
+
+
     }
 
     public void loginAsDriver(){

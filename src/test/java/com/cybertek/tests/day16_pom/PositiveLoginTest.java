@@ -31,7 +31,7 @@ public class PositiveLoginTest extends TestBase {
 
         loginPage.login(username,password);
 
-        Assert.assertEquals(driver.getCurrentUrl(),"https://qa3.vytrack.com/","verify we successfuly login");
+     Assert.assertEquals(driver.getCurrentUrl(),"https://qa3.vytrack.com/");
 
 
 

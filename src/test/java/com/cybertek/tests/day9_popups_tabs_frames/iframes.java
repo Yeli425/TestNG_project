@@ -26,39 +26,36 @@ public class iframes {
 
     @Test
     public void test1() throws InterruptedException {
-        driver.get("http://practice.cybertekschool.com/iframe");
+        driver.get("https://practice.expandtesting.com/iframe");
 
         //how to switch frames
         //1.Switch USING BY NAME OR ID attribute of iframe
         driver.switchTo().frame("mce_0_ifr");
 
-        //clear before sendkeys
-        driver.findElement(By.id("tinymce")).clear();
-        driver.findElement(By.id("tinymce")).sendKeys("Mike Smith");
 
-        //goes back to first frame(main html)
-        //goes back to first frame, useful when we have switched multipe frames
         driver.switchTo().defaultContent();
         Thread.sleep(1000);
 
         //2.USING INDEX
-        driver.switchTo().frame(0);
-        //clear before sendkeys
-        driver.findElement(By.id("tinymce")).clear();
-        driver.findElement(By.id("tinymce")).sendKeys("Mike Smith WITH INDEX");
+        int size =  driver.findElements(By.tagName("iframe")).size();
+        System.out.println(size);
+//        driver.switchTo().frame(1);
+//        //clear before sendkeys
+//        driver.findElement(By.id("tinymce")).clear();
+//        driver.findElement(By.id("tinymce")).sendKeys("Mike Smith WITH INDEX");
 
         //second way to switch parent
         driver.switchTo().parentFrame();
-
-        //3.USING WEBELEMENT
-        //locating iframe with any valid locator
-        WebElement iframeElement = driver.findElement(By.tagName("iframe"));
-
-        driver.switchTo().frame(iframeElement);
-        Thread.sleep(2000);
-
-        driver.findElement(By.id("tinymce")).clear();
-        driver.findElement(By.id("tinymce")).sendKeys("Mike Smith WITH WEBELEMENT");
+//
+//        //3.USING WEBELEMENT
+//        //locating iframe with any valid locator
+//        WebElement iframeElement = driver.findElement(By.tagName("iframe"));
+//
+//        driver.switchTo().frame(iframeElement);
+//        Thread.sleep(2000);
+//
+//        driver.findElement(By.id("tinymce")).clear();
+//        driver.findElement(By.id("tinymce")).sendKeys("Mike Smith WITH WEBELEMENT");
     }
 
 

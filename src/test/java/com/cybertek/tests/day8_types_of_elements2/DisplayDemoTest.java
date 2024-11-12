@@ -14,22 +14,22 @@ public class DisplayDemoTest {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("http://practice.cybertekschool.com/dynamic_loading/1");
+        driver.get("https://practice.expandtesting.com/dynamic-loading/1");
 
-        WebElement usernameInput = driver.findElement(By.id("username"));
+        WebElement message = driver.findElement(By.xpath("//h4[contains(text(), 'Hello World!')]"));
 
-        System.out.println("usernameInput.isDisplayed() = " + usernameInput.isDisplayed());
+        System.out.println("message.isDisplayed() = " + message.isDisplayed());
 
         //TASK
         //verify that username not displayed in the screen
-        Assert.assertFalse(usernameInput.isDisplayed(),"Verify inputbox not displayed");
+        Assert.assertFalse(message.isDisplayed(),"Verify message not displayed");
         //click start button
         //we locate and click at the same time
-         driver.findElement(By.cssSelector("#start>button")).click();
+         driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
          //wait until it appears
         Thread.sleep(6000);
         //verify username displayed on the screen
-        Assert.assertTrue(usernameInput.isDisplayed(),"verify username input displayed");
+        Assert.assertTrue(message.isDisplayed(),"verify username input displayed");
 
 
 

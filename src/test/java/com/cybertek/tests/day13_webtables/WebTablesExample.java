@@ -20,7 +20,7 @@ public class WebTablesExample {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://practice.cybertekschool.com/tables");
+        driver.get("https://practice.cydeo.com/web-tables");
 
     }
 
@@ -32,10 +32,10 @@ public class WebTablesExample {
 
     @Test
     public void printTable(){
-        WebElement table = driver.findElement(By.xpath("//table[@id='table1']"));
+        WebElement table = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']"));
 
         System.out.println(table.getText());
-        Assert.assertTrue(table.getText().contains("jsmith@gmail.com"));
+         Assert.assertTrue(table.getText().contains("Sausage"));
 
     }
 
@@ -71,17 +71,17 @@ public class WebTablesExample {
     @Test
     public void getRow(){
         //print the second row information
-        WebElement secondRow = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[2]"));
+        WebElement secondRow = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]"));
         //System.out.println(secondRow.getText());
 
         //get all the rows dynamically
         //1.find the number of rows
         //2.iterate one by one
 
-        List<WebElement> allRows = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
+        List<WebElement> allRows = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr"));
         for (int i = 1; i <=allRows.size() ; i++) {
 
-            WebElement row = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr["+i+"]"));
+            WebElement row = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr["+i+"]"));
             System.out.println(row.getText());
 
         }

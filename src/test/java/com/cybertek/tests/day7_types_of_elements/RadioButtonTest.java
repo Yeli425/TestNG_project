@@ -14,7 +14,7 @@ public class RadioButtonTest {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
-        driver.get("http://practice.cybertekschool.com/radio_buttons");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
         WebElement blueRadioButton = driver.findElement(By.id("blue"));
         WebElement redRadioButton = driver.findElement(By.id("red"));

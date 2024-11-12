@@ -11,7 +11,7 @@ public class CloseAndQuit {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://practice.cybertekschool.com");
+        driver.get("https://the-internet.herokuapp.com/");
         //wait 2 seconds
         Thread.sleep(2000);
 
@@ -21,7 +21,7 @@ public class CloseAndQuit {
 
         driver = new ChromeDriver();
 
-        driver.get("http://practice.cybertekschool.com/open_new_tab");
+        driver.get("https://www.selenium.dev/documentation/webdriver/interactions/windows/");
 
         Thread.sleep(5000);
 

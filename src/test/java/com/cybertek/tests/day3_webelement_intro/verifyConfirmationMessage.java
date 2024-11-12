@@ -1,9 +1,13 @@
 package com.cybertek.tests.day3_webelement_intro;
 
+import com.cybertek.utilities.Driver;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class verifyConfirmationMessage {
 
@@ -20,11 +24,14 @@ public class verifyConfirmationMessage {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("http://practice.cybertekschool.com/forgot_password");
+        driver.get("https://practice.expandtesting.com/forgot-password");
 
-        WebElement emailInputBox = driver.findElement(By.name("email"));
+//        WebDriverWait wait = new WebDriverWait(Driver.get(), 5);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
 
-        String expectedEmail = "test@cybertekschool.com";
+        WebElement emailInputBox = driver.findElement(By.id("email"));
+
+        String expectedEmail = "sadas@gmail.com";
         emailInputBox.sendKeys(expectedEmail);
 
         //somehow we should get text from webelements
@@ -45,7 +52,7 @@ public class verifyConfirmationMessage {
 
 
         //click on retrieve password button
-        WebElement retrievePasswordButton = driver.findElement(By.id("form_submit"));
+        WebElement retrievePasswordButton = driver.findElement(By.cssSelector("[class='btn btn-bg btn-primary d-block w-100'"));
 
         //click()--> clicking web element
         retrievePasswordButton.click();
@@ -53,10 +60,10 @@ public class verifyConfirmationMessage {
 
 
         //verify confirmation message
-        WebElement actualConfirmationMessage = driver.findElement(By.name("confirmation_message"));
+        WebElement actualConfirmationMessage = driver.findElement(By.id("confirmation-alert"));
 
         //save expected message that is defined in the test case
-        String expectedMessage = "Your e-mail's been sent!";
+        String expectedMessage = "An e-mail has been sent to you which explains how to reset your password.";
 
         //save actual message that is coming from browser
         String actualMessage = actualConfirmationMessage.getText();

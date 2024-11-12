@@ -11,7 +11,7 @@ public class AttributeTest {
     @Test
     public void test1(){
         WebDriver driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://practice.cybertekschool.com/radio_buttons");
+        driver.get("https://practice.expandtesting.com/radio-buttons");
 
         WebElement radioButton = driver.findElement(By.id("blue"));
 
@@ -29,12 +29,7 @@ public class AttributeTest {
 
         System.out.println(radioButton.getAttribute("outerHTML"));
 
-        //navigate to button
-        driver.get("http://practice.cybertekschool.com/multiple_buttons");
 
-        WebElement button2 = driver.findElement(By.name("button2"));
-
-        System.out.println(button2.getAttribute("outerHTML"));
 
         //BREAK UNTIL 3:02
         driver.quit();

@@ -33,7 +33,7 @@ public class FileUploadTest {
      */
     @Test
     public void test1(){
-        driver.get("http://practice.cybertekschool.com/upload");
+        driver.get("https://practice.expandtesting.com/upload");
         //locating choosefile button
         WebElement chooseFile = driver.findElement(By.name("file"));
         //sending file

@@ -29,7 +29,7 @@ public class PopupsAndAlerts {
         driver.get("https://www.primefaces.org/showcase/ui/overlay/confirmDialog.xhtml");
 
         //locate and click Destroy the World button(lazy way)
-        driver.findElement(By.xpath("//button[.='Destroy the World']")).click();
+        driver.findElement(By.xpath("//button[@id='j_idt248:j_idt249']")).click();
 
         //Locate and click No button
         driver.findElement(By.xpath("//button[.='No']")).click();
@@ -37,11 +37,10 @@ public class PopupsAndAlerts {
 
     @Test
     public void Alerts() throws InterruptedException {
-        driver.get("http://practice.cybertekschool.com/javascript_alerts");
+        driver.get("https://practice.cydeo.com/javascript_alerts");
 
         // locate click the Click For JS alert button
-        driver.findElement(By.xpath("//button[1]")).click();
-
+        driver.findElement(By.xpath("//button[contains(text(),'Click for JS Alert')]")).click();
         //switch to JS alert windows
         Alert alert = driver.switchTo().alert();
         Thread.sleep(2000);
@@ -49,14 +48,13 @@ public class PopupsAndAlerts {
         alert.accept();
 
         //Click on Click For JS Confirm
-        driver.findElement(By.xpath("//button[2]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Click for JS Confirm')]")).click();
         Thread.sleep(2000);
-
         //Click the Cancel button
         alert.dismiss();
 
         //Click for JS Prompt
-        driver.findElement(By.xpath("//button[3]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Click for JS Prompt')]")).click();
         Thread.sleep(2000);
         //sendkeys to alert and click OK
         alert.sendKeys("Mike Smith");
