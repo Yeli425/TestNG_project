@@ -2,7 +2,7 @@
 <suite name="Vytrack Automation" verbose="1">
     <test name="Vytrack Smoke Test">
        <classes>
-           <class name="com.cybertek.tests.pom.NegativeLoginTest">
+           <class name="com.practice.tests.pom.NegativeLoginTest">
                <methods>
                    <exclude name="wrongPasswordTest"></exclude>
 

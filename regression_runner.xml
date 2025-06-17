@@ -2,13 +2,13 @@
 <suite name="Vytrack Regression Suite" verbose="1">
     <test name="Vytrack Regression Test">
         <packages>
-            <package name="com.cybertek.tests.extent_reports"></package>
-            <package name="com.cybertek.tests.properties_driver_tests"></package>
-            <package name="com.cybertek.tests.staletest"></package>
+            <package name="com.practice.tests.extent_reports"></package>
+            <package name="com.practice.tests.properties_driver_tests"></package>
+            <package name="com.practice.tests.staletest"></package>
         </packages>
         <classes>
-            <class name="com.cybertek.tests.pom.NegativeLoginTest"></class>
-            <class name="com.cybertek.tests.review.verifyContactInfoTest"></class>
+            <class name="com.practice.tests.pom.NegativeLoginTest"></class>
+            <class name="com.practice.tests.review.verifyContactInfoTest"></class>
         </classes>
     </test>
 </suite>
